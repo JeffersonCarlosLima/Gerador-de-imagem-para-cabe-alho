@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="textarea.css">
+    <title>Criador de Imagens</title>
+    
+</head>
+
+<body>
+    <div id="container">
+        <h1>Gerar Cabeçalho para relatórios</h1>
+        
+        <!-- Formulário -->
+        <canvas id="canvas" width="1141" height="169"></canvas>
+        <!--<textarea id="texto" placeholder="Digite seu texto aqui"></textarea>-->
+        <div>
+            <input id="input-imagem1" type="file" name="inputimg1">
+            <input id="input-imagem2" type="file" name="inputimg2">
+            <div class="editor-container">
+                <div class="editor-toolbar">
+                  <button onclick="execCmd('bold')"><strong>B</strong></button>
+                  <button onclick="execCmd('italic')"><em>I</em></button>
+                  <button onclick="execCmd('underline')"><u>U</u></button>
+                  <button onclick="execCmd('insertOrderedList')">1.</button>
+                  <button onclick="execCmd('insertUnorderedList')">•</button>
+                  <button onclick="execCmd('justifyLeft')"><img src="https://img.icons8.com/ios/16/000000/align-left.png"/></button>
+                  <button onclick="execCmd('justifyCenter')"><img src="https://img.icons8.com/ios/16/000000/align-center.png"/></button>
+                  <button onclick="execCmd('justifyRight')"><img src="https://img.icons8.com/ios/16/000000/align-right.png"/></button>
+                  <select onchange="execCmd('fontName', this.value)">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Times New Roman, serif">Times New Roman</option>
+                    <option value="Courier New, monospace">Courier New</option>
+                  </select>
+                  <select onchange="execCmd('fontSize', this.value)">
+                    <option value="3">Normal</option>
+                    <option value="5">Grande</option>
+                    <option value="7">Muito Grande</option>
+                  </select>
+                </div>
+                <div id="texto" class="editor-content" contenteditable="true"></div>
+              </div>
+        </div>
+            <button id="botao">Salvar Imagem</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
